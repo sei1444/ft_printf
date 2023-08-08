@@ -6,16 +6,21 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/04 15:42:30 by marvin            #+#    #+#             */
-/*   Updated: 2023/08/06 13:34:19 by marvin           ###   ########.fr       */
+/*   Updated: 2023/08/08 23:36:03 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
+
 #include <stdarg.h>
 #include <string.h>
 #include <stdio.h>
 #include <unistd.h>
 #include <stdlib.h>
+void	ft_putchar_fd(char c, int fd)
+{
+	write(fd, &c, 1);
+}
 size_t	ft_strlen(const char *s)
 {
 	size_t	i;
@@ -27,60 +32,50 @@ size_t	ft_strlen(const char *s)
 		i++;
 	return (i);
 }
-static int	str_size(long num)
+size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
-	int	count;
+	size_t	i;
 
-	count = 0;
-	if (num < 0)
+	if (dstsize == 0)
+		return (ft_strlen(src));
+	i = 0;
+	while (src[i] != '\0' && i < dstsize - 1)
 	{
-		num *= -1;
-		count++;
+		dst[i] = src[i];
+		i++;
 	}
-	while (num != 0)
-	{
-		num /= 10;
-		count++;
-	}
-	return (count);
+	dst[i] = '\0';
+	return (ft_strlen(src));
 }
-static char	*handle_zero(void)
+int count_elements(int nbr, int basevalue)
 {
-	char	*str;
+    int count;
 
-	str = malloc(sizeof(char) * 2);
-	if (str == NULL)
-		return (NULL);
-	str[0] = '0';
-	str[1] = '\0';
-	return (str);
+    count = 0;
+    while (nbr > 0)
+    {
+        nbr /= basevalue;
+        count++;
+    }
+    return (count);
 }
-char	*ft_itoa(int n)
+char *ft_putnbr_base(int nbr, char *base)
 {
-	int		count;
-	long	num;
-	char	*str;
-
-	num = (long)n;
-	if (num == 0)
-		return (handle_zero());
-	count = str_size(num);
-	str = malloc(sizeof(char) * (count + 1));
-	if (str == NULL)
-		return (NULL);
-	str[count] = '\0';
-	if (num < 0)
-	{
-		str[0] = '-';
-		num *= -1;
-	}
-	while (num != 0)
-	{
-		str[count - 1] = num % 10 + '0';
-		num /= 10;
-		count--;
-	}
-	return (str);
+    int basevalue;
+    int count;
+    char *ptr;
+    
+    basevalue = ft_strlen(base);
+    count = count_elements(nbr, basevalue);
+    ptr = malloc(sizeof(char) * (count + 1));
+    ptr[count] = '\0';
+    while (count > 0)
+    {
+        ptr[count - 1] = base[nbr % basevalue];
+        nbr /= basevalue;
+        count--;
+    }
+    return (ptr);
 }
 void	ft_putstr_fd(char *s, int fd)
 {
@@ -89,30 +84,28 @@ void	ft_putstr_fd(char *s, int fd)
 	n = ft_strlen(s);
 	write(fd, s, n);
 }
-int ft_print_decimal(int num)
-{
-    int count;
-    char *str;
-
-    str = ft_itoa(num);
-    ft_putstr_fd(str, 1);
-    return (count);
-}
 
 int ft_print_pointer(void *ptr)
 {
     int count;
-    int *num;
+    unsigned int num;
+    char base[17];
+    char *str;
 
-    num = (int *)ptr;
-    ft_print_decimal(num);
+    num = (unsigned int)ptr;
+    ft_strlcpy(base, "0123456789abcdef", 17);
+    str = ft_putnbr_base(num, base);
+    count = ft_strlen(str) + 2;
+    ft_putchar_fd('0', 1);
+    ft_putchar_fd('x', 1);
+    ft_putstr_fd(str, 1);
     return (count);
 }
 
 int main()
 {
-    void *a = "asdfg";
-    printf("%p", a);
+    void *a = "aa";
+    printf("%p\n", a);
     ft_print_pointer(a);
     return (0);
 }
