@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/04 15:43:18 by marvin            #+#    #+#             */
-/*   Updated: 2023/08/06 13:20:46 by marvin           ###   ########.fr       */
+/*   Updated: 2023/08/09 00:23:47 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,7 +103,7 @@ int ft_print_decimal(int num)
 
 // int main()
 // {
-//     printf("%d\n", -12);
-//     ft_print_decimal(-12);
+//     printf("%d\n", 2147483648);
+//     ft_print_decimal(2147483648);
 //     return 0;
 // }
