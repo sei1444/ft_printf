@@ -42,13 +42,11 @@ static char	*handle_zero(void)
 	return (str);
 }
 
-char	*ft_itoa(int n)
+char	*ft_itoa(long num)
 {
 	int		count;
-	long	num;
 	char	*str;
 
-	num = (long)n;
 	if (num == 0)
 		return (handle_zero());
 	count = str_size(num);
