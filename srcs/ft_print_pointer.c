@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/04 15:42:30 by marvin            #+#    #+#             */
-/*   Updated: 2023/08/10 23:41:33 by marvin           ###   ########.fr       */
+/*   Updated: 2023/09/18 19:07:35 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,16 +89,21 @@
 int ft_print_pointer(void *ptr)
 {
     int count;
-    unsigned long num;
+    unsigned long long num;
     char base[17];
     char *str;
 
-    num = (unsigned long)ptr;
+    
+    num = (unsigned long long)ptr;
+    if (num == 0)
+    {
+        ft_putstr_fd("(nil)", 1);
+        return (5);
+    }
     ft_strlcpy(base, "0123456789abcdef", 17);
     str = ft_putnbr_base(num, base);
     count = ft_strlen(str) + 2;
-    ft_putchar_fd('0', 1);
-    ft_putchar_fd('x', 1);
+    ft_putstr_fd("0x", 1);
     ft_putstr_fd(str, 1);
     free(str);
     return (count);
@@ -106,8 +111,7 @@ int ft_print_pointer(void *ptr)
 
 // int main()
 // {
-//     void *a = "a";
-//     printf("%p\n", a);
-//     ft_print_pointer(a);
+//     printf("%p\n", 1);
+//     ft_print_pointer(1);
 //     return (0);
 // }

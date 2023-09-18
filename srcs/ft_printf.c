@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/31 15:49:49 by marvin            #+#    #+#             */
-/*   Updated: 2023/08/10 22:56:17 by marvin           ###   ########.fr       */
+/*   Updated: 2023/09/18 19:07:09 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,3 +59,10 @@ int ft_printf(const char *format, ...)
     return (count);
 }
 
+// int main()
+// {
+//     printf("%d\n", printf(" %p %p\n", (void *)0, (void *)0));
+//     printf("%d\n", printf("%p\n", NULL));    
+//     ft_printf("%p\n", (void *)0);
+//     return (0);
+// }

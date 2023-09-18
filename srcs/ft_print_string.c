@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/04 15:42:10 by marvin            #+#    #+#             */
-/*   Updated: 2023/08/10 17:39:59 by marvin           ###   ########.fr       */
+/*   Updated: 2023/09/17 18:40:21 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,13 +41,18 @@ int ft_print_string(char *str)
     int count;
 
     count = ft_strlen(str);
+    if (str == NULL)
+    {
+        count = 6;
+        str = "(null)";
+    }
     ft_putstr_fd(str, 1);
     return (count);
 }
 
 // int main()
 // {
-//     printf("%s\n", "asdfg");
-//     ft_print_string("asdfg");
+//     printf("b%db\n", printf("%s", NULL));
+//     printf("d%dd\n", ft_print_string(NULL));
 //     return (0);
 // }
