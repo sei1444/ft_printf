@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/31 15:49:49 by marvin            #+#    #+#             */
-/*   Updated: 2023/09/19 01:46:05 by marvin           ###   ########.fr       */
+/*   Updated: 2023/09/19 11:56:11 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,9 @@ int handle_format(const char *format, int *i, va_list ap)
     else if (format[*i] == 'u') 
         return ft_print_unsigned_decimal(va_arg(ap, unsigned int));
     else if (format[*i] == 'x') 
-        return ft_print_hex_lower(va_arg(ap, int));
+        return ft_print_hex_lower(va_arg(ap, unsigned int));
     else if (format[*i] == 'X') 
-        return ft_print_hex_upper(va_arg(ap, int));
+        return ft_print_hex_upper(va_arg(ap, unsigned int));
     else if (format[*i] == '%') 
         return ft_print_percent(); 
     return 1;
@@ -61,9 +61,9 @@ int ft_printf(const char *format, ...)
 
 // int main()
 // {
-//     printf("%u\n", 0);
-//     printf("%u\n", -1);    
-//     ft_printf("%u\n", 0);
-//     ft_printf("%u\n", -1);
+//     printf("%x\n", 0);
+//     printf("%x\n", -1);    
+//     ft_printf("%x\n", 0);
+//     ft_printf("%x\n", -1);
 //     return (0);
 // }

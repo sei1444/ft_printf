@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/04 18:16:15 by marvin            #+#    #+#             */
-/*   Updated: 2023/08/10 23:07:18 by marvin           ###   ########.fr       */
+/*   Updated: 2023/09/19 11:54:37 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,12 +82,17 @@
 // 	write(fd, s, n);
 // }
 
-int ft_print_hex_upper(int num)
+int ft_print_hex_upper(unsigned int num)
 {
     int count;
     char base[17];
     char *ptr;
 
+    if (num == 0)
+    {
+        ft_putchar_fd('0', 1);
+        return (1);
+    }
     ft_strlcpy(base, "0123456789ABCDEF", 17);
     ptr = ft_putnbr_base(num, base);
     count = ft_strlen(ptr);
