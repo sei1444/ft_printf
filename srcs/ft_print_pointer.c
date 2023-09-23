@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_print_pointer.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: seono <seono@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/04 15:42:30 by marvin            #+#    #+#             */
-/*   Updated: 2023/09/18 19:07:35 by marvin           ###   ########.fr       */
+/*   Updated: 2023/09/23 18:05:39 by seono            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,8 +97,8 @@ int ft_print_pointer(void *ptr)
     num = (unsigned long long)ptr;
     if (num == 0)
     {
-        ft_putstr_fd("(nil)", 1);
-        return (5);
+        ft_putstr_fd("0x0", 1);
+        return (3);
     }
     ft_strlcpy(base, "0123456789abcdef", 17);
     str = ft_putnbr_base(num, base);
