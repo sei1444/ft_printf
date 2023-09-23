@@ -3,16 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   ft_print_decimal.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: seono <seono@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/04 15:43:18 by marvin            #+#    #+#             */
-/*   Updated: 2023/08/10 23:04:12 by marvin           ###   ########.fr       */
+/*   Updated: 2023/09/23 18:24:23 by seono            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/ft_printf.h"
 #include "../libft/libft.h"
-
 
 // #include <stdarg.h>
 // #include <string.h>
@@ -93,21 +92,21 @@
 // 	write(fd, s, n);
 // }
 
-int ft_print_decimal(int num)
+int	ft_print_decimal(int num)
 {
-    int count;
-    char *str;
+	int		count;
+	char	*str;
 
-    str = ft_itoa(num);
-    count = ft_strlen(str);
-    ft_putstr_fd(str, 1);
-    free(str);
-    return (count);
+	str = ft_itoa(num);
+	count = ft_strlen(str);
+	ft_putstr_fd(str, 1);
+	free(str);
+	return (count);
 }
 
 // int main()
 // {
 //     printf("%d\n", 2147483648);
 //     ft_print_decimal(2147483648);
-//     return 0;
+//     return (0);
 // }

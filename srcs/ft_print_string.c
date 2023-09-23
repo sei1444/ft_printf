@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_print_string.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: seono <seono@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/04 15:42:10 by marvin            #+#    #+#             */
-/*   Updated: 2023/09/17 18:40:21 by marvin           ###   ########.fr       */
+/*   Updated: 2023/09/23 18:24:15 by seono            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,18 +36,18 @@
 // 	write(fd, s, n);
 // }
 
-int ft_print_string(char *str)
+int	ft_print_string(char *str)
 {
-    int count;
+	int	count;
 
-    count = ft_strlen(str);
-    if (str == NULL)
-    {
-        count = 6;
-        str = "(null)";
-    }
-    ft_putstr_fd(str, 1);
-    return (count);
+	count = ft_strlen(str);
+	if (str == NULL)
+	{
+		count = 6;
+		str = "(null)";
+	}
+	ft_putstr_fd(str, 1);
+	return (count);
 }
 
 // int main()

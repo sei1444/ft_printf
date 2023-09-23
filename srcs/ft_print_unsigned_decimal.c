@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_print_unsigned_decimal.c                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: seono <seono@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/04 15:44:28 by marvin            #+#    #+#             */
-/*   Updated: 2023/09/19 01:46:59 by marvin           ###   ########.fr       */
+/*   Updated: 2023/09/23 18:24:12 by seono            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,16 +92,16 @@
 // 	return (str);
 // }
 
-int ft_print_unsigned_decimal(unsigned int num)
+int	ft_print_unsigned_decimal(unsigned int num)
 {
-    int count;
-    char *str;
+	int		count;
+	char	*str;
 
-    str = ft_itoa(num);
-    count = ft_strlen(str);
-    ft_putstr_fd(str, 1);
-    free(str);
-    return (count);
+	str = ft_itoa(num);
+	count = ft_strlen(str);
+	ft_putstr_fd(str, 1);
+	free(str);
+	return (count);
 }
 
 // int main()

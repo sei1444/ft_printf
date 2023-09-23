@@ -6,7 +6,7 @@
 /*   By: seono <seono@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/04 15:42:30 by marvin            #+#    #+#             */
-/*   Updated: 2023/09/23 18:05:39 by seono            ###   ########.fr       */
+/*   Updated: 2023/09/23 18:23:10 by seono            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@
 //     int basevalue;
 //     int count;
 //     char *ptr;
-    
+
 //     basevalue = ft_strlen(base);
 //     count = count_elements(nbr, basevalue);
 //     ptr = malloc(sizeof(char) * (count + 1));
@@ -86,27 +86,26 @@
 // 	write(fd, s, n);
 // }
 
-int ft_print_pointer(void *ptr)
+int	ft_print_pointer(void *ptr)
 {
-    int count;
-    unsigned long long num;
-    char base[17];
-    char *str;
+	int					count;
+	unsigned long long	num;
+	char				base[17];
+	char				*str;
 
-    
-    num = (unsigned long long)ptr;
-    if (num == 0)
-    {
-        ft_putstr_fd("0x0", 1);
-        return (3);
-    }
-    ft_strlcpy(base, "0123456789abcdef", 17);
-    str = ft_putnbr_base(num, base);
-    count = ft_strlen(str) + 2;
-    ft_putstr_fd("0x", 1);
-    ft_putstr_fd(str, 1);
-    free(str);
-    return (count);
+	num = (unsigned long long)ptr;
+	if (num == 0)
+	{
+		ft_putstr_fd("0x0", 1);
+		return (3);
+	}
+	ft_strlcpy(base, "0123456789abcdef", 17);
+	str = ft_putnbr_base(num, base);
+	count = ft_strlen(str) + 2;
+	ft_putstr_fd("0x", 1);
+	ft_putstr_fd(str, 1);
+	free(str);
+	return (count);
 }
 
 // int main()

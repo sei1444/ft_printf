@@ -3,18 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   ft_print_percent.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: seono <seono@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/04 18:34:00 by marvin            #+#    #+#             */
-/*   Updated: 2023/08/10 17:39:50 by marvin           ###   ########.fr       */
+/*   Updated: 2023/09/23 18:24:19 by seono            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/ft_printf.h"
 #include "../libft/libft.h"
 
-int ft_print_percent()
+int	ft_print_percent(void)
 {
-    ft_putchar_fd('%', 1);
-    return 1;
+	ft_putchar_fd('%', 1);
+	return (1);
 }

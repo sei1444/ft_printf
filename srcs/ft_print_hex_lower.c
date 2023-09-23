@@ -3,16 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   ft_print_hex_lower.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: seono <seono@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/04 15:44:53 by marvin            #+#    #+#             */
-/*   Updated: 2023/09/19 11:54:25 by marvin           ###   ########.fr       */
+/*   Updated: 2023/09/23 18:24:22 by seono            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/ft_printf.h"
 #include "../libft/libft.h"
-
 
 // #include <stdarg.h>
 // #include <string.h>
@@ -62,7 +61,7 @@
 //     int basevalue;
 //     int count;
 //     char *ptr;
-    
+
 //     basevalue = ft_strlen(base);
 //     count = count_elements(nbr, basevalue);
 //     ptr = malloc(sizeof(char) * (count + 1));
@@ -83,23 +82,23 @@
 // 	write(fd, s, n);
 // }
 
-int ft_print_hex_lower(unsigned int num)
+int	ft_print_hex_lower(unsigned int num)
 {
-    int count;
-    char base[17];
-    char *ptr;
+	int		count;
+	char	base[17];
+	char	*ptr;
 
-    if (num == 0)
-    {
-        ft_putchar_fd('0', 1);
-        return (1);
-    }
-    ft_strlcpy(base, "0123456789abcdef", 17);
-    ptr = ft_putnbr_base(num, base);
-    count = ft_strlen(ptr);
-    ft_putstr_fd(ptr, 1);
-    free(ptr);
-    return (count);
+	if (num == 0)
+	{
+		ft_putchar_fd('0', 1);
+		return (1);
+	}
+	ft_strlcpy(base, "0123456789abcdef", 17);
+	ptr = ft_putnbr_base(num, base);
+	count = ft_strlen(ptr);
+	ft_putstr_fd(ptr, 1);
+	free(ptr);
+	return (count);
 }
 
 // int main()
