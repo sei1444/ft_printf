@@ -6,7 +6,7 @@
 /*   By: seono <seono@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/04 23:13:30 by marvin            #+#    #+#             */
-/*   Updated: 2023/09/23 18:24:00 by seono            ###   ########.fr       */
+/*   Updated: 2023/10/08 18:47:01 by seono            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,8 @@ char	*ft_putnbr_base(unsigned long long nbr, char *base)
 	basevalue = ft_strlen(base);
 	count = count_elements(nbr, basevalue);
 	ptr = malloc(sizeof(char) * (count + 1));
+	if (ptr == NULL)
+		return (NULL);
 	ptr[count] = '\0';
 	while (count > 0)
 	{
